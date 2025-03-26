@@ -22,6 +22,9 @@ nav{
     width: 100%;
     height: 10vh;
     position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -132,32 +135,48 @@ nav{
     background-color: rgb(109,67, 0);
 }
 
-section{
-    width: 100%;
-    height: 90vh;
+/* SPA Section Handling */
+.section {
+    display: none;
+    min-height: 100vh;
+    padding-top: 100px; /* Adjust based on your navbar height */
+}
+
+.section.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Ensure all sections take full viewport height */
+#home, #about, #skills, #services, #contact {
+    height: 100vh;
+    overflow-y: auto;
+    
 }
 
 .main-container{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+   justify-content: center;
+   align-items: center;
+   
+
 }
 
-.main-container .image{
-    z-index: -1;
-    width: 50%;
-}
-
-.main-container .image img{
-    width: 100%;
-}
 
 .main-container .content{
     color: black;
-    width: 40%;
-    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    
 }
 
 .content h1{
@@ -204,14 +223,14 @@ section{
 
 @keyframes words {
     0%, 33%{
-        content: "Developer";
+        content: "Java Full Stack";
     }
     34%, 66%{
-        content: "Designer";
+        content: " Developer";
     }
-    67%, 100%{
+    /* 67%, 100%{
         content: "Youtuber";
-    }
+    } */
 }
 
 .content p{
@@ -250,8 +269,9 @@ section{
     border: none;
     outline: none;
     font-size: 100%;
+    border-radius: 15rem;
     font-weight: 700;
-    border-radius: 5px;
+    
     transition: 0.2s linear;
 }
 
